@@ -1,5 +1,7 @@
 # MIPS
 
+Plz change the output of the codes
+
 Sites:
 https://chortle.ccsu.edu/AssemblyTutorial/index.html#part4
 
