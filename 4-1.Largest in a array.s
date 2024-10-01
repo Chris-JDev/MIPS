@@ -1,6 +1,6 @@
 .data
-ArrayA: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-length:  .word 10  # Number of elements
+ArrayA: .word 1, 2, 3, 20, 5, 6, 7, 8, 9, 10
+length:  .word 10          # Number of elements
 msg:     .asciiz "\nLargest Element: "
 
 .text
@@ -9,10 +9,10 @@ msg:     .asciiz "\nLargest Element: "
 main:
     li $t0, 0                # i = 0
     lw $t1, length           # $t1 = n (length of the array)
-    lw $t2, ArrayA(0)       # $t2 = max = A[0]
+    lw $t2, ArrayA           # $t2 = max = A[0] (Load the first element)
 
 next_i:
-    bge $t0, $t1, print      # if i >= n then print the result
+    bge $t0, $t1, print      # if i >= n, go to print
     sll $t3, $t0, 2          # each element is 4 bytes (i * 4)
     lw  $t4, ArrayA($t3)     # $t4 = A[i]
 
